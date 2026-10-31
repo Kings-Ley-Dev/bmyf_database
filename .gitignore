@@ -1,0 +1,18 @@
+# dependencies and build output
+node_modules/
+dist/
+.vercel/
+
+# secrets: never commit these (set them in Vercel > Settings > Environment Variables instead)
+.env
+.env.*
+!.env.example
+client/.env
+client/.env.*
+!client/.env.example
+
+# logs and OS files
+*.log
+npm-debug.log*
+.DS_Store
+Thumbs.db
