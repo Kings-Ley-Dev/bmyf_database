@@ -1,6 +1,6 @@
-# BMYF Database
+# BMYF Database 
 
-React app (`client/`) + Express/MongoDB API (`api/`). 
+React app (`client/`) + Express/MongoDB API (`api/`).
 
 ## Run locally
 1. Install everything once: `npm run setup` (installs the API and the client).
