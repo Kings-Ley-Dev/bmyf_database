@@ -123,3 +123,5 @@ a.pc:hover{transform:translateY(-6px);box-shadow:0 18px 40px #24248f55}
 .cform{display:flex;gap:8px;padding:12px;border-top:1px solid var(--bd)}.cform textarea{resize:none;flex:1;max-height:120px}
 .lnk{background:none;border:0;color:inherit;text-decoration:underline;cursor:pointer;font-size:inherit;padding:0}
 @media(max-width:860px){.chat{grid-template-columns:1fr;height:calc(100vh - 240px)}.chat.open .clist{display:none}.chat:not(.open) .cthread{display:none}.cback{display:inline-block}}
+.chk{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:4px 12px;margin:4px 0 8px}.chk label{display:flex;align-items:center;gap:8px;margin:0;font-weight:500;color:var(--tx);cursor:pointer}.chk input{width:auto;margin:0}
+.chip.off{background:#e3e4ee;color:#4a4f73}
