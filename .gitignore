@@ -8,8 +8,8 @@ dist/
 .env.*
 !.env.example
 client/.env
-client/.env.*
-!client/.env.example
+client/.env.* 
+!client/.env.example 
 
 # logs and OS files
 *.log
