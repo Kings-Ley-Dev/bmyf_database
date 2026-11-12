@@ -1,6 +1,6 @@
 {
   "name": "bmyf-database",
-  "version": "1.0.0",
+  "version": "1.0.0",  
   "private": true,
   "description": "Beulah Methodist Youth Fellowship member and attendance database API",
   "main": "api/index.js",
