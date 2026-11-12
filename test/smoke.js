@@ -3,7 +3,7 @@ const B=process.env.API||'http://localhost:5000/api',E=process.env.TEST_EMAIL||'
 const call=async(m,p,b,cookie=ck)=>{const r=await fetch(B+p,{method:m,headers:{'Content-Type':'application/json',cookie},body:b&&JSON.stringify(b)});const c=r.headers.getSetCookie?.();if(c?.length&&cookie===ck)ck=c.map(x=>x.split(';')[0]).join('; ');const t=await r.text();let j;try{j=JSON.parse(t)}catch{j=t}return{s:r.status,j,h:r.headers}};
 const eq=(a,b,m='')=>{if(a!==b)throw new Error(`${m} expected ${b}, got ${a}`)},t=async(n,f)=>{try{await f();pass++;console.log('PASS',n)}catch(e){fail++;console.log('FAIL',n,'-',e.message)}};
 const day=n=>new Date(Date.now()+n*864e5).toISOString().slice(0,10),u=Date.now().toString().slice(-6);
-(async()=>{let m,sess=[];
+(async()=>{let m,sess=[];  
 await t('super admin sign-up works once, then closes',async()=>{const b={fullName:'Test Admin',email:E,password:P},r=await call('POST','/auth/super-admin-signup',b,'');if(![201,403].includes(r.s))throw new Error('unexpected '+r.s);eq((await call('POST','/auth/super-admin-signup',{...b,email:'other@test.local'},'')).s,403,'second sign-up');eq((await call('GET','/auth/super-admin-status',null,'')).j.data.available,false,'status')});
 await t('unauthenticated requests are refused',async()=>eq((await call('GET','/members',null,'')).s,401));
 await t('wrong portal is refused',async()=>eq((await call('POST','/auth/login',{email:E,password:P,portal:'attendance_officer'})).s,403));
