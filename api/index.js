@@ -6,7 +6,7 @@ let conn,cleaned=false;app.use(async(_q,res,n)=>{try{await(conn??=mongoose.conne
 // ---------- models ----------
 const GROUPS=['Clegg','Wesley','Probation'],ROLES=['super_admin','admin','group_leader','attendance_officer'];
 const M=(n,d,o={})=>mongoose.models[n]||mongoose.model(n,new mongoose.Schema(d,{timestamps:true,...o}));
-const ref=n=>({type:mongoose.Schema.Types.ObjectId,ref:n});
+const ref=n=>({type:mongoose.Schema.Types.ObjectId,ref:n});  
 const User=M('User',{fullName:String,email:{type:String,unique:true,lowercase:true,trim:true},phone:String,passwordHash:String,role:{type:String,enum:ROLES},group:{type:String,enum:GROUPS},status:{type:String,enum:['active','inactive','suspended'],default:'active'},mustChange:{type:Boolean,default:true},lastLoginAt:Date,resetHash:String,resetExp:Date});
 const Counter=M('Counter',{_id:String,n:Number},{timestamps:false});
 const EMP=['Employed','Unemployed','Apprentice','Student'],INV=['Lay Preacher','Lay Reader','Liturgist','Leader','Steward','Evangelist','Sunday School Teacher/Helper','Usher','Caretaker','Ministerial Student'];
