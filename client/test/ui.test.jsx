@@ -1,7 +1,7 @@
 // UI smoke test: renders the real app in jsdom against a running API (see README > Testing).
 import {render,screen,fireEvent,waitFor,cleanup} from '@testing-library/react'
 import {it,expect} from 'vitest'
-import App from '../src/App.jsx'
+import App from '../src/App.jsx'  
 const SA=import.meta.env.VITE_SUPER_ADMIN_PATH||'/secure-access-bmyf',SU=import.meta.env.VITE_SUPER_ADMIN_SIGNUP_PATH||'/bmyfsuperadminsignup',API=process.env.API_ORIGIN||'http://localhost:5000',E=process.env.TEST_EMAIL||'admin@test.local',P=process.env.TEST_PASSWORD||'TestPass123!'
 let jar='';const real=globalThis.fetch
 globalThis.fetch=async(u,o={})=>{const url=String(u).startsWith('/')?API+u:u,r=await real(url,{...o,headers:{...(o.headers||{}),cookie:jar}}),c=r.headers.getSetCookie?.();if(c?.length)jar=c.map(x=>x.split(';')[0]).join('; ');return r}
