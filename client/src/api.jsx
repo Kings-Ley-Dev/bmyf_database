@@ -3,7 +3,7 @@ const BASE=import.meta.env.VITE_API_URL||''
 const NOAPI='Cannot reach the server. If you are running this on your computer, the API is not running: open the project folder in a terminal and run "npm run dev".'
 export async function api(path,o={}){
   let r;try{r=await fetch(BASE+'/api'+path,{credentials:'include',...o,headers:{'Content-Type':'application/json'},body:o.body&&JSON.stringify(o.body)})}catch{throw new Error(NOAPI)}
-  const j=await r.json().catch(()=>null)
+  const j=await r.json().catch(()=>null)  
   if(!r.ok)throw new Error(j?.message||(r.status>=500?NOAPI:'Something went wrong. Please try again.'))
   return j.data
 }
