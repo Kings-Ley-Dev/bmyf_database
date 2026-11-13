@@ -1,6 +1,6 @@
 
 :root{--navy:#24248f;--nd:#15155c;--yel:#f7e21c;--bg:#fff;--card:#fff;--tx:#161a3a;--mu:#6b7096;--bd:#e3e5f3;--ok:#16a06a;--no:#e0454f;--ex:#e59a1a;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
-html{scroll-padding-top:env(safe-area-inset-top,0px)}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}  
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--tx);font:15px/1.5 Figtree,system-ui,sans-serif}
 h1,h2,h3{font-family:Sora,system-ui,sans-serif;margin:0;letter-spacing:-.02em}
 button,input,select,textarea{font:inherit;color:inherit}
