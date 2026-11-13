@@ -1,7 +1,7 @@
 import {useEffect,useState,useRef,createContext,useContext} from 'react'
 import {BrowserRouter,Routes,Route,Navigate,NavLink,Link,useNavigate,useParams,useLocation,useSearchParams} from 'react-router-dom'
 import {api,useLoad,toast,Toasts,download,refreshBadges} from './api.jsx'
-import {Ic} from './icons.jsx'
+import {Ic} from './icons.jsx'  
 const Ctx=createContext(),useAuth=()=>useContext(Ctx),G=['Clegg','Wesley','Probation'],ADM=['super_admin','admin'],ROLE={super_admin:'Super Admin',admin:'Admin',group_leader:'Group Leader',attendance_officer:'Attendance Officer'}
 const fd=d=>new Date(d).toLocaleDateString('en-GB',{day:'numeric',month:'short',year:'numeric'}),ini=n=>(n||'?').split(' ').map(x=>x[0]).join('').slice(0,2)
 const MONTHS=['January','February','March','April','May','June','July','August','September','October','November','December']
